@@ -1,14 +1,29 @@
 .titulo {
   font-size: 3rem;
-  color: chocolate;
-  background-color: black;
+  color: rgb(32, 77, 83);
 }
 
 .cabecalho {
   display: flex;
+  align-items: center;
+  background-color: rgb(98, 167, 172);
   justify-content: space-around;
 }
 
 .subtitulo{
     font-size: 2rem;
+}
+
+.rodape{
+  display: flex;
+  align-items: center;
+  background-color: rgb(98, 167, 172);
+  justify-content: space-around;
+}
+
+.conteudo{
+  display: flex;
+  align-items: center;
+  background-color: rgb(154, 232, 238);
+  justify-content: center;
 }
