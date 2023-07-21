@@ -1,3 +1,11 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .titulo {
   font-size: 3rem;
   color: rgb(32, 77, 83);
@@ -19,6 +27,9 @@
   align-items: center;
   background-color: rgb(98, 167, 172);
   justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .conteudo{
