@@ -1,0 +1,21 @@
+.rodape {
+    display: flex;
+    align-items: center;
+    background-color: rgb(98, 167, 172);
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+  }
+  
+  .redes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+  }
+  
+  .rodape img {
+    width: 40px;
+  }

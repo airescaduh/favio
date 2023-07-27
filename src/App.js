@@ -3,6 +3,7 @@ import "./App.css";
 import Cabecalho from "./componentes/Cabecalho";
 import Rodape from "./componentes/Rodape";
 import Conteudo from "./componentes/Conteudo";
+import Menu from "./componentes/Menu";
 /*
 Arquivo App JSX
 Componente funcional = Porque ele é uma função
@@ -13,9 +14,10 @@ function App() {
   return (
     /*O React substitui className por class pq class é palavra reservada do JS*/
     <>
+      <Menu />
       <Cabecalho logo="logo192.png" titulo="fav.io" subtitulo="O melhor site" />
-      <Conteudo titulo="A"/>
-      <Rodape titulo="Rodapé" subtitulo="Caduh"/>
+      <Conteudo titulo="A" />
+      <Rodape titulo="Rodapé" subtitulo="Caduh" />
     </>
   );
 }

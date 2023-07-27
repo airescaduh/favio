@@ -1,0 +1,32 @@
+/* Menu.module.css */
+.cabecalho {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5.2em;
+  padding-top: 5.4em;
+  background-color: rgb(98, 167, 172);
+  z-index: 99; /* Certifique-se de que o menu fique em cima de outros elementos */
+}
+
+.lista {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin-right: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+.link:hover {
+  color: #083a52;
+}

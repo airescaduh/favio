@@ -1,5 +1,6 @@
+// Rodape.js
 import React from "react";
-import styles from "../Cabecalho/Cabecalho.module.css";
+import styles from "./Rodape.module.css";
 import tt from "../../twitter.png";
 import insta from "../../instagram.png";
 import wts from "../../whatsapp.png";
@@ -20,9 +21,9 @@ const Rodape = () => {
       </div>
 
       <div className={styles.redes}>
-        <img className={styles.png} src={tt} alt="Twitter"></img>
-        <img className={styles.png} src={insta} alt="Instagram"></img>
-        <img className={styles.png} src={wts} alt="WhatsApp"></img>
+        <img src={tt} alt="Twitter"></img>
+        <img src={insta} alt="Instagram"></img>
+        <img src={wts} alt="WhatsApp"></img>
       </div>
     </div>
   );
