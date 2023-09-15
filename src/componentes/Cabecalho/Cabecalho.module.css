@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -8,21 +8,20 @@ body{
 
 .titulo {
   font-size: 3rem;
-  color: rgb(32, 77, 83);
+  color: chocolate;
+  background-color: black;
 }
 
 .cabecalho {
   display: flex;
-  align-items: center;
-  background-color: rgb(98, 167, 172);
   justify-content: space-around;
 }
 
-.subtitulo{
-    font-size: 2rem;
+.subtitulo {
+  font-size: 2rem;
 }
 
-.rodape{
+.rodape {
   display: flex;
   align-items: center;
   background-color: rgb(98, 167, 172);
@@ -32,7 +31,7 @@ body{
   width: 100%;
 }
 
-.conteudo{
+.conteudo {
   display: flex;
   align-items: center;
   background-color: rgb(154, 232, 238);
