@@ -15,11 +15,11 @@ function App() {
   /*O React substitui className por class pq class é palavra reservada do JS*/
   return (
     <>
-      {/* <Menu /> */}
-      {/* <Cabecalho logo="logo192.png" titulo="fav.io" subtitulo="O melhor site" /> */}
-      {/* <Conteudo titulo="A" /> */}
+      <Menu />
+      <Cabecalho logo="logo192.png" titulo="fav.io" subtitulo="O melhor site" />
+      <Conteudo titulo="A" />
       <Estados />
-      {/* <Rodape titulo="Rodapé" subtitulo="Caduh" /> */}
+      <Rodape titulo="Rodapé" subtitulo="Caduh" />
     </>
   );
 }
