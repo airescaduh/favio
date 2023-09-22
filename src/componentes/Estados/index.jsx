@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./Estados.module.css";
 
 const Estados = () => {
   //hook
@@ -7,12 +8,17 @@ const Estados = () => {
   const [favoritos, setFavoritos] = useState([]);
 
   function addFavorito(nome, url) {
+    localStorage.setItem("favorito", { nome, url });
+
     let favorito = { nome, url };
     console.log(favoritos);
     setFavoritos([...favoritos, favorito]);
+  
+    // favoritos = [...favoritos, { nome, url }];
+    // localStorage.setItem("favorito", JSON.stringify(favoritos));
   }
-
-  function handleInput(valor) {
+ 
+  function handleUrl(valor) {
     setUrl(valor);
   }
 
@@ -20,27 +26,36 @@ const Estados = () => {
     setNome(valor);
   }
   return (
-    <div>
-      <h1>Estados</h1>
+    <div className={styles.area}>
+      <form
+        className={styles.formulario}
+        onSubmit={() => alert("Favorito Salvo")}
+      >
+        <h1>{nome}</h1>
+        <input
+          type="text"
+          value={nome}
+          onChange={(evento) => {
+            handleNome((prev) => evento.target.value);
+            console.log(nome);
+          }}
+        />
 
-      <h1>{nome}</h1>
-      <input
-        type="text"
-        value={nome}
-        onChange={(e) => handleNome(e.target.value)}
-      />
-
-      <h1>{url}</h1>
-      <input
-        type="text"
-        value={url}
-        onChange={(e) => handleInput(e.target.value)}
-      />
-      <button onClick={() => addFavorito(nome, url)}>Adicionar</button>
-      <h1>Favoritos</h1>
-      {favoritos.map((elemento) => {
-        return <li>{elemento.nome}</li>;
-      })}
+        <h1>{url}</h1>
+        <input
+          type="text"
+          value={url}
+          onChange={(evento) => {
+            handleUrl((prev) => evento.target.value);
+            console.log(url);
+          }}
+        />
+        <input type="button" onClick={() => addFavorito(nome, url)} value='adicionar'/>
+        <h1>Favoritos</h1>
+        {favoritos.map((elemento) => {
+          return <li>{elemento.nome}</li>;
+        })}
+      </form>
     </div>
   );
 };
