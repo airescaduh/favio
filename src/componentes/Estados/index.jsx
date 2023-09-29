@@ -26,10 +26,11 @@ const Estados = () => {
     setNome(valor);
   }
   return (
+    <>
+    {favoritos}
     <div className={styles.area}>
       <form
         className={styles.formulario}
-        onSubmit={() => alert("Favorito Salvo")}
       >
         <h1>{nome}</h1>
         <input
@@ -57,6 +58,7 @@ const Estados = () => {
         })}
       </form>
     </div>
+    </>
   );
 };
 
