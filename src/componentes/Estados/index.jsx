@@ -8,16 +8,13 @@ const Estados = () => {
   const [favoritos, setFavoritos] = useState([]);
 
   function addFavorito(nome, url) {
-    localStorage.setItem("favorito", { nome, url });
+    setFavoritos([...favoritos, { nome, url }]);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
-    let favorito = { nome, url };
-    console.log(favoritos);
-    setFavoritos([...favoritos, favorito]);
-  
     // favoritos = [...favoritos, { nome, url }];
     // localStorage.setItem("favorito", JSON.stringify(favoritos));
   }
- 
+
   function handleUrl(valor) {
     setUrl(valor);
   }
@@ -27,37 +24,47 @@ const Estados = () => {
   }
   return (
     <>
-    {favoritos}
-    <div className={styles.area}>
-      <form
-        className={styles.formulario}
-      >
-        <h1>{nome}</h1>
-        <input
-          type="text"
-          value={nome}
-          onChange={(evento) => {
-            handleNome((prev) => evento.target.value);
-            console.log(nome);
-          }}
-        />
+      <ul>
+        {favoritos[0] != undefined &&
+          favoritos.map((favorito) => (
+            <li>
+              {favoritos[0].nome} : {favorito.url}
+            </li>
+          ))}
+      </ul>
 
-        <h1>{url}</h1>
-        <input
-          type="text"
-          value={url}
-          onChange={(evento) => {
-            handleUrl((prev) => evento.target.value);
-            console.log(url);
-          }}
-        />
-        <input type="button" onClick={() => addFavorito(nome, url)} value='adicionar'/>
-        <h1>Favoritos</h1>
-        {favoritos.map((elemento) => {
-          return <li>{elemento.nome}</li>;
-        })}
-      </form>
-    </div>
+      <div className={styles.area}>
+        <form className={styles.formulario}>
+          <h1>{nome}</h1>
+          <input
+            type="text"
+            value={nome}
+            onChange={(evento) => {
+              handleNome((prev) => evento.target.value);
+              console.log(nome);
+            }}
+          />
+
+          <h1>{url}</h1>
+          <input
+            type="text"
+            value={url}
+            onChange={(evento) => {
+              handleUrl((prev) => evento.target.value);
+              console.log(url);
+            }}
+          />
+          <input
+            type="button"
+            onClick={() => addFavorito(nome, url)}
+            value="adicionar"
+          />
+          <h1>Favoritos</h1>
+          {favoritos.map((elemento) => {
+            return <li key={elemento.nome}>{elemento.nome}</li>;
+          })}
+        </form>
+      </div>
     </>
   );
 };
