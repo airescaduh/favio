@@ -13,11 +13,28 @@ const LoginTela = () => {
     setsenha(valor);
   }
 
+  const usuariosLocalStorage =
+    JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  function handleLogin() {
+    // Verifica se o email e senha correspondem a um usuário
+    const usuarioEncontrado = usuariosLocalStorage.find(
+      (usuario) => usuario.email === email && usuario.senha === senha
+    );
+
+    if (usuarioEncontrado) {
+      // Autenticação bem-sucedida, redireciona ou executa a lógica desejada
+      alert("Login bem-sucedido!");
+    } else {
+      // Autenticação falhou, exibe uma mensagem de erro
+      alert("Credenciais inválidas. Tente novamente.");
+    }
+  }
   return (
     <>
       <div className={styles.area}>
         <form className={styles.formulario}>
-          <h1>Email</h1>
+          <h3>Email</h3>
           <input
             type="text"
             value={email}
@@ -27,7 +44,7 @@ const LoginTela = () => {
             }}
           />
 
-          <h1>Senha</h1>
+          <h3>Senha</h3>
           <input
             type="password"
             value={senha}
@@ -36,15 +53,7 @@ const LoginTela = () => {
             }}
           />
 
-          <input
-            type="button"
-            onClick={() => addUsuario(email, senha)}
-            value="Cadastrar"
-          />
-          <h1>usuarios</h1>
-          {usuarios.map((elemento) => {
-            return <li key={elemento.nome}>{elemento.nome}</li>;
-          })}
+          <input type="button" value="Login" onClick={handleLogin} />
         </form>
       </div>
     </>

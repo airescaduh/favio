@@ -21,7 +21,7 @@ const Estados = () => {
 
   function handleNome(valor) {
     setNome(valor);
-  } 
+  }
   return (
     <>
       <ul>

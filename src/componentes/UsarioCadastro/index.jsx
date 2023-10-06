@@ -59,7 +59,7 @@ const Cadastrousuario = () => {
     <>
       <div className={styles.area}>
         <form className={styles.formulario}>
-          <h1>Nome</h1>
+          <h3>Nome</h3>
           <input
             type="text"
             value={nome}
@@ -69,7 +69,7 @@ const Cadastrousuario = () => {
             }}
           />
 
-          <h1>Email</h1>
+          <h3>Email</h3>
           <input
             type="text"
             value={email}
@@ -79,7 +79,7 @@ const Cadastrousuario = () => {
             }}
           />
 
-          <h1>Senha</h1>
+          <h3>Senha</h3>
           <input
             type="password"
             value={senha}
@@ -87,7 +87,7 @@ const Cadastrousuario = () => {
               handleSenha((prev) => evento.target.value);
             }}
           />
-          <h1>Confirme a Senha</h1>
+          <h3>Confirme a Senha</h3>
           <input
             type="password"
             value={confirmarSenha}
@@ -102,7 +102,7 @@ const Cadastrousuario = () => {
             onClick={() => addUsuario(nome, senha, confirmarSenha, email)}
             value="Cadastrar"
           />
-          <h1>usuarios</h1>
+          <h3>usuarios</h3>
           {usuarios.map((elemento) => {
             return <li key={elemento.id}>{elemento.nome}</li>;
           })}
