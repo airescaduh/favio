@@ -21,8 +21,8 @@ function App() {
       <Cabecalho logo="logo192.png" titulo="fav.io" subtitulo="O melhor site" />
       {/* <Estados /> */}
       <UsuarioCadastro />
+      <LoginTela />
       <Rodape titulo="Rodapé" subtitulo="Caduh" />
-      {/* <LoginTela/> */}
     </>
   );
 }
