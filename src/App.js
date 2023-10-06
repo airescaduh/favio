@@ -4,6 +4,9 @@ import Cabecalho from "./componentes/Cabecalho";
 import Rodape from "./componentes/Rodape";
 import Menu from "./componentes/Menu";
 import Estados from "./componentes/Estados";
+import UsuarioCadastro from "./componentes/UsarioCadastro";
+import LoginTela from "./componentes/LoginTela";
+
 /*
 Arquivo App JSX
 Componente funcional = Porque ele é uma função
@@ -16,8 +19,10 @@ function App() {
     <>
       <Menu />
       <Cabecalho logo="logo192.png" titulo="fav.io" subtitulo="O melhor site" />
-      <Estados />
+      {/* <Estados /> */}
+      <UsuarioCadastro />
       <Rodape titulo="Rodapé" subtitulo="Caduh" />
+      {/* <LoginTela/> */}
     </>
   );
 }
