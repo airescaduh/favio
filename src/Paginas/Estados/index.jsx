@@ -4,11 +4,12 @@ import styles from "./Estados.module.css";
 const Estados = () => {
   //hook
   const [url, setUrl] = useState("http://www.google.com.br");
-  const [nome, setNome] = useState("Google");
+  const [nome, setNome] = useState("");
+  const [importante, setImportant] = useState(false);
   const [favoritos, setFavoritos] = useState([]);
 
   function addFavorito(nome, url) {
-    setFavoritos([...favoritos, { nome, url }]);
+    setFavoritos([...favoritos, { nome, url, importante }]);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
     // favoritos = [...favoritos, { nome, url }];
@@ -27,7 +28,7 @@ const Estados = () => {
       <ul>
         {favoritos[0] != undefined &&
           favoritos.map((favorito) => (
-            <li>
+            <li style={favorito.importante?{ color: "red" }:{}}>
               {favoritos[0].nome} : {favorito.url}
             </li>
           ))}
@@ -54,6 +55,15 @@ const Estados = () => {
               console.log(url);
             }}
           />
+          <br />
+          <input
+            type="checkbox"
+            name="checkbox"
+            onChange={(evento) => setImportant(!importante)}
+          ></input>
+          <label htmlFor="checkbox">Importante</label>
+
+          <br />
           <input
             type="button"
             onClick={() => addFavorito(nome, url)}
