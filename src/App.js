@@ -1,10 +1,10 @@
 import { Routes } from "react-router-dom";
 import "./App.css";
-import routes from "./routes";
+import Rotas from "./routes";
 
 
 function App() {
-  return <routes/>;
+  return <Rotas/>;
 }
 
 export default App;

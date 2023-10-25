@@ -1,15 +1,19 @@
 import React from "react";
-import styles from "./Menu.module.css";
+import { Link } from 'react-router-dom'
 
-export default function Menu(props) {
+const Menu = () => {
   return (
-    <nav className={styles.cabecalho}>
-      {/* Lista de Links */}
-      <ul className={styles.lista}>
-        <li className={styles.item}><a href="#home" className={styles.link}>Home</a></li>
-        <li className={styles.item}><a href="#produtos" className={styles.link}>Produtos</a></li>
-        <li className={styles.item}><a href="#sobre" className={styles.link}>Sobre</a></li>
-      </ul>
-    </nav>
-  );
+    <>      
+    <ul >
+       
+        <li> <Link to={'/'}>Home</Link></li>
+        <li> <Link to={'/login'}>Login</Link></li>
+        <li> <Link to={'/cadastro'}>Cadastro de Usuario</Link></li>
+       </ul>
+       
+       </>
+
+  )
 }
+
+export default Menu;
