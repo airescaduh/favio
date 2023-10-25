@@ -1,9 +1,10 @@
-import logo from "./logo.svg";
+import { Routes } from "react-router-dom";
 import "./App.css";
-import Principal from "./Paginas/Principal";
+import routes from "./routes";
+
 
 function App() {
-  return <Principal />;
+  return <routes/>;
 }
 
 export default App;

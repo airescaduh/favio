@@ -1,7 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
-import Principal from '../Paginas/Principal'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Principal from './Paginas/Principal'
+import Login from './Paginas/LoginTela'
+import UsuarioCadastro from './Paginas/UsarioCadastro'
 const routes = () => {
   return (
     <BrowserRouter>
